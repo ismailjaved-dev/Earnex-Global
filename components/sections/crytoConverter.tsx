@@ -34,7 +34,7 @@ const CryptoConverter: React.FC = () => {
   };
 
   return (
-    <div className="pb-10 sm:py-20 px-5">
+    <div className="pb-10 sm:py-20 px-5 overflow-hidden">
 
               <div className="max-w-[680px] mx-auto text-center mb-12">
                 
