@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import { Button } from "../ui/button";
 import Image from "next/image";
+import { TextAnimate } from "../ui/text-animate";
 
 const CryptoConverter: React.FC = () => {
   const [isBuy, setIsBuy] = useState(true);
@@ -35,7 +36,10 @@ const CryptoConverter: React.FC = () => {
     <div className="pb-10 sm:py-20 px-5">
 
               <div className="max-w-[680px] mx-auto text-center mb-12">
-                <h2 className="text-[38px] md:text-[49px] font-bold mb-24px leading-[1.1]">One click, instant payout with credit or debit card.</h2>
+                
+               
+                <TextAnimate animation="slideUp" by="word" className={'text-[38px] md:text-[49px] font-bold mb-24px leading-[1.1]'}>
+One click, instant payout with credit or debit card.</TextAnimate>
                 <p className="md:text-lg lg:text-xl">Become a crypto owner in minutes using your debit or credit card and quickly purchase top cryptocurrencies.</p>
               </div>
 

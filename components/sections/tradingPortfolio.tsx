@@ -1,6 +1,7 @@
 import React from 'react'
 import { Button } from '../ui/button'
 import Image from 'next/image'
+import { TextAnimate } from '../ui/text-animate'
 
 const TradingPortfolio = () => {
 
@@ -15,7 +16,8 @@ const TradingPortfolio = () => {
     return (
         <div className='fluid-container grid lg:grid-cols-2 py-10 lg:py-16 gap-10 px-5'>
         <div>
-            <h2 className='text-[40px] md:text-[50px] lg:text-5xl font-semibold mb-12 lg:max-w-[530px] text-center lg:text-start'>Start Your Trading Portfolio.</h2>
+             <TextAnimate animation="slideUp" by="word" className={'text-[40px] md:text-[50px] lg:text-5xl font-semibold mb-12 lg:max-w-[530px] text-center lg:text-start'}>
+Start Your Trading Portfolio.</TextAnimate>
             {data.map((item, index) => (
                 <div key={index} className='mb-8 lg:max-w-lg relative pl-[60px] sm:pl-[92px]'>
                     <span className='bg-[#095171] rounded-full h-11 w-11 flex items-center justify-center absolute top-0 left-0'>{index+1}</span>

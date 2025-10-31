@@ -5,6 +5,7 @@ import { Autoplay, Navigation } from "swiper/modules";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import 'swiper/css';
 import 'swiper/css/pagination';
+import { TextAnimate } from "../ui/text-animate";
 
 interface MediaItem {
     id: number;
@@ -62,8 +63,16 @@ const mediaData: MediaItem[] = [
 const Testimonial = () => {
     return (
         <div className="fluid-container px-5 py-16">
-            <h2 className="text-center text-[38px] md:text-[44px] fromt-semibold leading-[1.2] mb-16 ">What media says about<br />
-             <span className="text-[42px] md:text-[49px] font-bold">Earnex  Global?</span></h2>
+           
+              <TextAnimate animation="slideUp" by="word" className={'text-center text-[38px] md:text-[44px] fromt-semibold leading-[1.2]'}>
+What media says about 
+</TextAnimate>
+              <TextAnimate animation="slideUp" by="word" className={'text-center text-[42px] md:text-[49px] font-bold leading-[1.2] mb-16'}>
+Earnex  Global?
+</TextAnimate>
+
+<span className=""></span>
+         
             <div className=" w-full text-center text-white relative">
 
 

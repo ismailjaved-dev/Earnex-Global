@@ -1,12 +1,16 @@
 import { ArrowRight, MoveRightIcon } from 'lucide-react'
 import Image from 'next/image'
 import React from 'react'
+import { TextAnimate } from '../ui/text-animate'
 
 const TradingPotential = () => {
     return (
         <div className='fluid-container max-w-[1140px] grid grid-cols-2 gap-5 lg:pt-28 lg:pb-10 px-5 overflow-hidden'>
             <div className='flex flex-col items-center lg:items-start gap-8 md:gap-15 py-5 text-center lg:text-start col-span-2 lg:col-span-1'>
-                <h2 className='text-[38px] md:text-5xl font-semibold max-w-[490px] leading-[1.3]'>Unlock Your Trading Potential</h2>
+                <h2 className=''></h2>
+                <TextAnimate animation="slideUp" by="word" className={'text-[38px] md:text-5xl font-semibold max-w-[490px] leading-[1.3]'}>
+                    Unlock Your Trading Potential
+                </TextAnimate>
                 <p className='text-lg lg:text-xl max-w-[640px]' style={{wordSpacing:"1px"}}>
                     With real time data and advanced charting tools, You can
                     track your portfolio and quickly react to changes in the market.

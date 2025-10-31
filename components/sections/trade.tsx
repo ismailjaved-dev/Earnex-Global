@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
+import { TextAnimate } from '../ui/text-animate';
 
 
 interface Stat {
@@ -22,7 +23,10 @@ const Trade = () => {
     return (
         <div className='fluid-container px-5 pt-20 pb-10'>
             <div className='max-w-[800px] mx-auto'>
-                <h2 className='text-[38px] md:text-[48px] font-semibold text-center mb-5'>Trade Anywhere, Anytime.</h2>
+                
+                <TextAnimate animation="slideUp" by="word" className={'text-[38px] md:text-[48px] font-semibold text-center mb-5'}>
+                  Trade Anywhere, Anytime.
+                </TextAnimate>
                 <p className='md:text-lg lg:text-xl text-center'>
                     4 platforms to choose from —
                     <Link className='underline decoration-[#CDCDCD] px-1' href='https://afterprime.com/tradingview' target='_blank'>TradingView</Link>,
