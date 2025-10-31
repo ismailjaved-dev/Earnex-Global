@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { Button } from "../ui/button";
 import Image from "next/image";
 import { TextAnimate } from "../ui/text-animate";
+import { BorderBeam } from "../ui/border-beam";
 
 const CryptoConverter: React.FC = () => {
   const [isBuy, setIsBuy] = useState(true);
@@ -116,6 +117,18 @@ One click, instant payout with credit or debit card.</TextAnimate>
         >
           {isBuy ? "Buy Now" : "Sell Now"}
         </Button>
+         <BorderBeam
+        duration={6}
+        size={400}
+        className="from-transparent via-[white] to-transparent"
+      />
+      <BorderBeam
+        duration={6}
+        delay={3}
+        size={400}
+        borderWidth={2}
+        className="from-transparent via-[#117fae] to-transparent"
+      />
       </div>
 
       <div className="max-w-[490px] mx-auto px-5 mt-20">
