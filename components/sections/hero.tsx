@@ -1,7 +1,36 @@
+"use client";
 import Image from 'next/image'
 import React from 'react'
+import { useEffect, useState } from "react";
+import Lenis from "lenis";
+
 
 const Hero = () => {
+
+    const [lenisRef, setLenis] = useState(null);
+  const [rafState, setRaf] = useState(null);
+
+  useEffect(() => {
+    const scroller = new Lenis();
+    let rf;
+
+    function raf(time) {
+      scroller.raf(time);
+      requestAnimationFrame(raf);
+    }
+
+    rf = requestAnimationFrame(raf);
+    setRaf(rf);
+    setLenis(scroller);
+
+    return () => {
+      if (lenisRef) {
+        cancelAnimationFrame(rafState);
+        lenisRef.destroy();
+      }
+    };
+  }, []);
+
 
     const data = [
         {
