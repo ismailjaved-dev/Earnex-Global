@@ -32,7 +32,7 @@ const Hero = () => {
              <Image src={'/heroBg.png'} fill alt='' className='object-cover object-center -z-10 h-[113%]!' />
             <h1 className='font-bold text-[40px] md:text-[50px] lg:text-[55px] text-center max-w-[650px] mx-auto leading-[1.2]'>Transform Opportunities
                 into Profits</h1>
-            <p className='text-lg lg:text-xl text-center max-w-[625px] mx-auto mt-5 tracking-[1.5px]'>Trade with the world's largest retail broker and benefit from
+            <p className='text-lg lg:text-xl text-center max-w-[625px] mx-auto mt-5 '>Trade with the world's largest retail broker and benefit from
                 better-than-market conditions.</p>
            </div>
 
