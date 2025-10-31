@@ -62,20 +62,21 @@ const mediaData: MediaItem[] = [
 const Testimonial = () => {
     return (
         <div className="fluid-container px-5 py-16">
-            <h2 className="text-center text-[44px] fromt-semibold leading-[1.2] mb-16">What media says about<br /> <span className="text-[49px] font-bold">Earnex  Global?</span></h2>
+            <h2 className="text-center text-[38px] md:text-[44px] fromt-semibold leading-[1.2] mb-16 ">What media says about<br />
+             <span className="text-[42px] md:text-[49px] font-bold">Earnex  Global?</span></h2>
             <div className=" w-full text-center text-white relative">
 
 
                 <div className="relative">
 
                     <div
-                        className="absolute left-0 top-1/2 -translate-y-1/2 z-10 cursor-pointer border border-white p-2 rounded-full"
+                        className="hidden sm:block absolute left-0 top-1/2 -translate-y-1/2 z-10 cursor-pointer border border-white p-2 rounded-full"
                         id="media-prev"
                     >
                         <ChevronLeft size={20} />
                     </div>
                     <div
-                        className="absolute right-0 top-1/2 -translate-y-1/2 z-10 cursor-pointer border border-white p-2 rounded-full"
+                        className="hidden sm:block absolute right-0 top-1/2 -translate-y-1/2 z-10 cursor-pointer border border-white p-2 rounded-full"
                         id="media-next"
                     >
                         <ChevronRight size={20} />
@@ -94,9 +95,14 @@ const Testimonial = () => {
                         }}
                         loop={true}
                         centeredSlides={true}
-                        slidesPerView={2.6}
+                        slidesPerView={1}
                         speed={700}
                         className="w-full items-center"
+                        breakpoints={{
+                            640:{
+                                slidesPerView:2.6
+                            }
+                        }}
                     >
                         {mediaData.map((item) => (
                             <SwiperSlide key={item.id}>

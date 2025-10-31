@@ -32,14 +32,14 @@ const CryptoConverter: React.FC = () => {
   };
 
   return (
-    <div className="py-20 px-5">
+    <div className="pb-10 sm:py-20 px-5">
 
               <div className="max-w-[680px] mx-auto text-center mb-12">
-                <h2 className="text-[49px] font-bold mb-24px leading-[1.1]">One click, instant payout with credit or debit card.</h2>
-                <p>Become a crypto owner in minutes using your debit or credit card and quickly purchase top cryptocurrencies.</p>
+                <h2 className="text-[38px] md:text-[49px] font-bold mb-24px leading-[1.1]">One click, instant payout with credit or debit card.</h2>
+                <p className="md:text-lg lg:text-xl">Become a crypto owner in minutes using your debit or credit card and quickly purchase top cryptocurrencies.</p>
               </div>
 
-      <div className="w-[350px] sm:w-[400px] bg-[#2F324190] rounded-2xl py-6 px-8 backdrop-blur-5xl mx-auto relative">
+      <div className="max-w-[350px] sm:max-w-[400px] bg-[#2F324190] rounded-2xl py-6 px-8 backdrop-blur-5xl mx-auto relative">
         <Image src={'/cardImg.svg'} fill alt="" className="-z-10 top-[50px]! left-[-150px]!"/>
         {/* Tabs */}
         <div className="flex justify-between mb-6">
@@ -116,7 +116,7 @@ const CryptoConverter: React.FC = () => {
 
       <div className="max-w-[490px] mx-auto px-5 mt-20">
              <p className="text-[#5D6588] text-center">We accept payment with many methods:</p>
-             <div className="flex gap-8 justify-between mt-2">
+             <div className="flex flex-wrap justify-center gap-8  mt-2">
                 <Image src={'/master.svg'} width={64} height={64} alt=""/>
                 <Image src={'/visa.svg'} width={64} height={64} alt=""/>
                 <Image src={'/apple-pay.svg'} width={64} height={64} alt=""/>

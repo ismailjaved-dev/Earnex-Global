@@ -18,21 +18,22 @@ const logos = [
 const LogoGrid = () => {
     return (
         <div className="w-full  bg-black flex flex-col items-center justify-center px-6 py-10 gap-12">
-
                   <p className='text-2xl font-semibold text-center '>Your funds are held in top-tier institutions</p>           
                   
             <div
-                className="grid grid-cols-2 md:grid-cols-4 w-full max-w-[1200px] mx-auto gridContainer">
+                className="grid sm:grid-cols-2 md:grid-cols-3  lg:grid-cols-4 w-full max-w-[1200px] mx-auto gridContainer">
                 {logos.map((logo, index) => (
                     <div
                         key={index}
                         className="
-              relative flex items-center justify-center bg-black "
+              relative flex items-center justify-center b "
 
                     >
                         <div
-                            className={`flex items-center justify-center w-full h-60 py-10  bg-black  border-[#09517180]
-                              ${(index + 1) % 4 === 0 ? '' : 'border-r'}
+                            className={`flex items-center justify-center w-full sm:h-60 py-10    border-[#09517180]
+                                ${(index + 1) % 2 === 0 ? '' : 'sm:border-r '}
+                                ${(index + 1) % 3 === 0 ? 'md:border-r-0' : 'md:border-r '}
+                                ${(index + 1) % 4 === 0 ? 'lg:border-r-0!' : 'lg:border-r'}
                             `}>
                             <Image
                                 src={logo.url}

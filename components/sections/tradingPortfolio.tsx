@@ -13,20 +13,20 @@ const TradingPortfolio = () => {
 
 
     return (
-        <div className='fluid-container grid grid-cols-2 py-16 gap-10 px-5'>
+        <div className='fluid-container grid lg:grid-cols-2 py-10 lg:py-16 gap-10 px-5'>
         <div>
-            <h2 className='text-5xl font-semibold mb-12 max-w-[530px]'>Start Your Trading Portfolio.</h2>
+            <h2 className='text-[40px] md:text-[50px] lg:text-5xl font-semibold mb-12 lg:max-w-[530px] text-center lg:text-start'>Start Your Trading Portfolio.</h2>
             {data.map((item, index) => (
-                <div key={index} className='mb-8 max-w-lg relative pl-[92px]'>
+                <div key={index} className='mb-8 lg:max-w-lg relative pl-[60px] sm:pl-[92px]'>
                     <span className='bg-[#095171] rounded-full h-11 w-11 flex items-center justify-center absolute top-0 left-0'>{index+1}</span>
                     <h3 className='text-[25px] font-semibold mb-2'>{item.title}</h3>
-                    <p className='text-xl font-light mb-4 max-w-[500px]'>{item.description}</p>
+                    <p className='md:text-lg lg:text-xl font-light mb-4 lg:max-w-[500px]'>{item.description}</p>
                     {item.button && <Button variant={'default'} size={'default'} className='rounded-full!'>Get Started</Button>}
                 </div>
             ))}
         </div>
-        <div className='relative '>
-           <Image src={'/build-portfolio-img.svg'} alt='' fill className='max-w-[550px] max-h-[550px] my-auto right-0! left-auto!'/>
+        <div className='relative hidden lg:block'>
+           <Image src={'/build-portfolio-img.svg'} alt='' fill className='max-w-[550px] lmax-h-[550px] my-auto right-0! left-auto!'/>
         </div>
         </div>
     )
