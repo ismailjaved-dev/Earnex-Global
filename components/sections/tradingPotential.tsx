@@ -21,7 +21,7 @@ const TradingPotential = () => {
             </div>
             <div className='relative w-full h-full max-w-[664px] min-h-[664px]'>
                 <div className='ellipse block h-[600px] w-[600px] absolute rounded-full'></div>
-                <Image src={'/tradeImg.png'} fill alt=''/>
+                <Image src={'/tradeImg.png'} fill alt='' className='max-w-[550px] max-h-[550px]'/>
             </div>
         </div>
     )

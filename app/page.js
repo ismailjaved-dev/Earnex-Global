@@ -1,8 +1,10 @@
 import About from "@/components/sections/about";
+import CryptoConverter from "@/components/sections/crytoConverter";
 import Footer from "@/components/sections/footer";
 import Hero from "@/components/sections/hero";
 import LogoGrid from "@/components/sections/logoGrid";
 import Navbar from "@/components/sections/navbar";
+import Testimonial from "@/components/sections/testimonial";
 import Trade from "@/components/sections/trade";
 import TradingPortfolio from "@/components/sections/tradingPortfolio";
 import TradingPotential from "@/components/sections/tradingPotential";
@@ -18,6 +20,8 @@ export default function Home() {
     <TradingPotential />
     <Trade />
     <TradingPortfolio />
+    <CryptoConverter />
+    <Testimonial />
     <Footer />
     </div>
   );
