@@ -1,9 +1,18 @@
-import React from 'react'
+'use client'
+import React, { useEffect } from 'react'
 import { Button } from '../ui/button'
 import Image from 'next/image'
 import { TextAnimate } from '../ui/text-animate'
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const TradingPortfolio = () => {
+
+          useEffect(() => {
+    AOS.init({
+      duration: 1000 // Duration in milliseconds
+    });
+  }, []);
 
     const data = [
         { title: "Register", description: "Signup for an Itrade account and get access to world class pricing.", button: true },
@@ -27,7 +36,7 @@ Start Your Trading Portfolio.</TextAnimate>
                 </div>
             ))}
         </div>
-        <div className='relative hidden lg:block'>
+        <div className='relative hidden lg:block'  data-aos={'fade-left'}>
            <Image src={'/build-portfolio-img.svg'} alt='' fill className='max-w-[550px] lmax-h-[550px] my-auto right-0! left-auto!'/>
         </div>
         </div>

@@ -1,7 +1,10 @@
+'use client'
+import React, { useEffect } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import React from 'react'
 import { TextAnimate } from '../ui/text-animate';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 
 interface Stat {
@@ -20,6 +23,13 @@ const statsData: Stat[] = [
 
 
 const Trade = () => {
+
+        useEffect(() => {
+    AOS.init({
+      duration: 1000 // Duration in milliseconds
+    });
+  }, []);
+
     return (
         <div className='fluid-container px-5 pt-20 pb-10'>
             <div className='max-w-[800px] mx-auto'>
@@ -38,7 +48,7 @@ const Trade = () => {
                 </p>
             </div>
 
-            <div className='max-w-[1000px] mx-auto py-10 md:py-20 flex flex-wrap sm:flex-nowrap justify-center gap-10'>
+            <div className='max-w-[1000px] mx-auto py-10 md:py-20 flex flex-wrap sm:flex-nowrap justify-center gap-10'  data-aos={'fade-up'}>
                   <div className='relative rounded-lg block h-[300px] w-[300px] hover:scale-110 transition-all duration-300'>
                     <Image src={'/tradeImg1.svg'} fill alt=''/>
                   </div>

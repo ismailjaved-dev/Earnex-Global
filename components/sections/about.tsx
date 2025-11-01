@@ -1,12 +1,23 @@
+'use client'
+import React,{ useEffect} from 'react'
 import Image from 'next/image'
-import React from 'react'
 import { Button } from '../ui/button'
 import { TextAnimate } from '../ui/text-animate'
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const About = () => {
+
+
+        useEffect(() => {
+    AOS.init({
+      duration: 1000 // Duration in milliseconds
+    });
+  }, []);
+
   return (
     <div className='fluid-container grid grid-cols-2 gap-12 lg:gap-24 items-center max-w-[1150px] pt-14 lg:pt-28 pb-10 sm:pb-16 px-5'>
-        <div className='relative w-full h-full max-w-[520px] hidden md:block'>
+        <div className='relative w-full h-full max-w-[520px] hidden md:block'  data-aos={'fade-right'}>
             <Image src={'/aboutImg.png'} fill alt=''/>
         </div>
         <div className='flex flex-col justify-center gap-5 col-span-2 md:col-span-1 mx-auto text-center md:text-start md:min-h-[400px] lg:min-h-[520px]  max-w-[470px]'>
