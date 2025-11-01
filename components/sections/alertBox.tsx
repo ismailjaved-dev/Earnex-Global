@@ -83,7 +83,7 @@ const AlertBox = () => {
     
      <>
       <button className={`fixed z-100 bottom-[25px] right-[25px] bg-white text-black rounded-3xl  w-[50px] h-[50px] overflow-hidden flex items-center justify-center hover:bg-[#2bf568] transition duration-300 ease-in-out  ${active ? 'opacity-100 cursor-pointer' : 'opacity-0 '}`} disabled={!active && true} onClick={()=>{
-        window.open('https://t.me/+447411514933', '_blank');
+        window.open('https://t.me/earnexglobal', '_blank');
       }}>
         <Image src={'/telegram.png'} fill alt=""/>
       </button>

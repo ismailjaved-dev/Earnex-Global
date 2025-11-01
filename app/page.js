@@ -1,5 +1,6 @@
 import About from "@/components/sections/about";
 import AlertBox from "@/components/sections/alertBox";
+import Block from "@/components/sections/block";
 import CryptoConverter from "@/components/sections/crytoConverter";
 import Footer from "@/components/sections/footer";
 import Hero from "@/components/sections/hero";
@@ -16,6 +17,7 @@ export default function Home() {
     <div className="relative">
       
     <Navbar /> 
+    <Block />
     <AlertBox /> 
     <Hero />
     <About />
