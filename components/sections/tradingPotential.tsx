@@ -1,5 +1,5 @@
 'use client'
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { ArrowRight, MoveRightIcon } from 'lucide-react'
 import Image from 'next/image'
 import { TextAnimate } from '../ui/text-animate'
@@ -8,11 +8,43 @@ import 'aos/dist/aos.css';
 
 const TradingPotential = () => {
 
+      const [email, setEmail] = useState('')
+      const [loading, setLoading] = useState(false)
+
       useEffect(() => {
     AOS.init({
       duration: 1000 // Duration in milliseconds
     });
   }, []);
+
+    const handleSubmit = (e) =>{
+    setLoading(true)
+    e.preventDefault()
+    console.log(email)
+    fetch('https://sheetdb.io/api/v1/9riwz6dpixu6c', {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        data: [
+          {
+            'Number': '-',
+            'Newsletter': email,
+            'Email': '-',
+            'Interest': '-',
+          }
+        ]
+      })
+    })
+    .then((response) => response.json())
+    .then((data) => {
+      setLoading(false)
+    setEmail('')
+  })
+   .catch((error)=> console.log(error))
+  }
 
 
     return (
@@ -26,13 +58,17 @@ const TradingPotential = () => {
                     With real time data and advanced charting tools, You can
                     track your portfolio and quickly react to changes in the market.
                 </p>
-                <div className='relative h-15 w-full max-w-[700px]'>
+                <form onSubmit={(e)=> handleSubmit(e)} className='relative h-15 w-full max-w-[700px]'>
                     <input placeholder='Enter your email address'
+                    type='email' 
+              value={email}
+              required
+              onChange={(e)=> setEmail(e.target.value)}
                      className='rounded-full w-full h-full border border-[#FFFFFF59] outline-none py-3 px-8 font-sora
                       text-[#FFFFFF8C] md:text-lg lg:text-xl placeholder:text-[#FFFFFF8C] 
                      '/>
-                     <button className='text-black md:text-lg lg:text-xltext-xl absolute rounded-full h-15 flex justify-center gap-3 items-center w-32 md:w-40 border border-[#FFFFFF59] btn-gradient font-semibold top-0 right-0 cursor-pointer'>Send <MoveRightIcon /></button>
-                </div>
+                     <button type='submit' disabled={loading} className='text-black md:text-lg lg:text-xltext-xl absolute rounded-full h-15 flex justify-center gap-3 items-center w-32 md:w-40 border border-[#FFFFFF59] btn-gradient font-semibold top-0 right-0 cursor-pointer'>Send <MoveRightIcon /></button>
+                </form>
             </div>
             <div className='relative w-full h-full max-w-[664px] min-h-[664px] hidden lg:block' data-aos={'fade-left'}>
                 <div className='ellipse block h-[600px] w-[600px] absolute rounded-full'></div>

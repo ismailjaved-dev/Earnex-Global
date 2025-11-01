@@ -5,6 +5,7 @@ import Image from 'next/image'
 import { TextAnimate } from '../ui/text-animate'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import Link from 'next/link'
 
 const TradingPortfolio = () => {
 
@@ -32,7 +33,11 @@ Start Your Trading Portfolio.</TextAnimate>
                     <span className='bg-[#095171] rounded-full h-11 w-11 flex items-center justify-center absolute top-0 left-0'>{index+1}</span>
                     <h3 className='text-[25px] font-semibold mb-2'>{item.title}</h3>
                     <p className='md:text-lg lg:text-xl font-light mb-4 lg:max-w-[500px]'>{item.description}</p>
-                    {item.button && <Button variant={'default'} size={'default'} className='rounded-full!'>Get Started</Button>}
+                    {item.button && 
+                    <Link href={'/signup'}>
+
+                    <Button variant={'default'} size={'default'} className='rounded-full!'>Get Started</Button>
+                    </Link>}
                 </div>
             ))}
         </div>

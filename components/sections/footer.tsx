@@ -1,8 +1,12 @@
+'use client'
 import Image from 'next/image'
-import React from 'react'
+import React, {useState} from 'react'
 import { Button } from '../ui/button'
 
 const Footer = () => {
+
+  const [email, setEmail] = useState('')
+  const [loading, setLoading] = useState(false)
 
     const data = [
         {title:"Company", links:[
@@ -24,6 +28,35 @@ const Footer = () => {
         ]}
     ]
 
+  const handleSubmit = (e) =>{
+    setLoading(true)
+    e.preventDefault()
+    console.log(email)
+    fetch('https://sheetdb.io/api/v1/9riwz6dpixu6c', {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        data: [
+          {
+            'Number': '-',
+            'Newsletter': email,
+            'Email': '-',
+            'Interest': '-',
+          }
+        ]
+      })
+    })
+    .then((response) => response.json())
+    .then((data) => {
+      setLoading(false)
+    setEmail('')
+  })
+   .catch((error)=> console.log(error))
+  }
+
 
   return (
     <div className='fluid-container px-5'>
@@ -33,10 +66,14 @@ const Footer = () => {
             <h5 className='text-2xl font-semibold mb-5'>Subscribe to Newsletter</h5>
             <p className='max-w-[560px] text-[#CDCDCD]'>Aliquet dignissim erat habitasse aliquet tincidunt phasellus ultrices. Aenean sed elit mattis sagittis id velit sed scelerisque.</p>
           </div>
-          <div className='flex flex-wrap sm:flex-nowrap md:justify-end items-center gap-3'>
-            <input type='email' placeholder='Enter your email' className=' bg-white outline-none rounded-full h-14 px-10 py-5 sm:max-w-[330px] w-full text-sm text-[#CDCDCD]'/>
-            <Button size={'default'} variant={'outline'} className={'rounded-full font-semibold text-[17px] w-full sm:w-auto'}>Subscribe</Button>
-          </div>
+          <form onSubmit={(e)=> handleSubmit(e)} className='flex flex-wrap sm:flex-nowrap md:justify-end items-center gap-3'>
+            <input type='email' 
+              value={email}
+              required
+              onChange={(e)=> setEmail(e.target.value)}
+            placeholder='Enter your email' className=' bg-white outline-none rounded-full h-14 px-10 py-5 sm:max-w-[330px] w-full text-sm text-[#CDCDCD]'/>
+            <Button type='submit' disabled={loading} size={'default'} variant={'outline'} className={'rounded-full font-semibold text-[17px] w-full sm:w-auto'}>Subscribe</Button>
+          </form>
          </div>
 
     <div className='flex flex-wrap justify-between py-10 gredientBorder gap-5'>

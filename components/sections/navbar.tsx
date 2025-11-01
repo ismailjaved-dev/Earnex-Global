@@ -47,12 +47,16 @@ const Navbar = () => {
                     })}
                 </div>
                 <div className="gap-3 hidden lg:flex">
+                    <Link href={'/signup'}>
                     <Button className="" variant={'default'} size={'sm'}>
                         Register
                     </Button>
+                    </Link>
+                    <Link href={'/signin'}>
                     <Button className="" variant={'outline'} size={'sm'}>
                         Sigin in
                     </Button>
+                    </Link>
                 </div>
                 <div className="block lg:hidden">
                     <Sheet>

@@ -1,4 +1,5 @@
 import About from "@/components/sections/about";
+import AlertBox from "@/components/sections/alertBox";
 import CryptoConverter from "@/components/sections/crytoConverter";
 import Footer from "@/components/sections/footer";
 import Hero from "@/components/sections/hero";
@@ -12,8 +13,10 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="">
-    <Navbar />  
+    <div className="relative">
+      
+    <Navbar /> 
+    <AlertBox /> 
     <Hero />
     <About />
     <LogoGrid />
